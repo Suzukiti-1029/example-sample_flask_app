@@ -1,0 +1,16 @@
+{
+  "name": "sample_flask_app",
+  "dockerComposeFile": ["./docker-compose.yml"],
+  "service": "app",
+  "workspaceFolder": "/home",
+  "forwardPorts": ["50000:5000"],
+  "extensions": [
+    "streetsidesoftware.code-spell-checker", // スペルミス防止
+    "mhutchie.git-graph", // Git見やすく
+    "eamodio.gitlens", // Git見やすく
+    "oderwat.indent-rainbow", // インデントわかりやすく
+    "mosapride.zenkaku", // 不必要なミス防止
+    "ms-python.python",
+    "KevinRose.vsc-python-indent"
+  ]
+}

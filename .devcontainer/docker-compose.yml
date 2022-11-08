@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  app:
+    build: ./
+    container_name: flask-docker
+    ports:
+      - "50000:5000"
+    volumes:
+      - "/Users/suzukiti/dev/sample_flask_app:/home"
+    command: /bin/bash
+    tty: true
