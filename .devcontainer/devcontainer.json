@@ -2,7 +2,7 @@
   "name": "sample_flask_app",
   "dockerComposeFile": ["./docker-compose.yml"],
   "service": "app",
-  "workspaceFolder": "/home",
+  "workspaceFolder": "/home/sample_flask_app",
   "forwardPorts": ["50000:5000"],
   "extensions": [
     "streetsidesoftware.code-spell-checker", // スペルミス防止

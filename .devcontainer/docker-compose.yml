@@ -7,6 +7,6 @@ services:
     ports:
       - "50000:5000"
     volumes:
-      - "/Users/suzukiti/dev/sample_flask_app:/home"
+      - "/Users/suzukiti/dev/sample_flask_app:/home/sample_flask_app"
     command: /bin/bash
     tty: true
