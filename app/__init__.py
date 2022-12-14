@@ -6,7 +6,7 @@ def create_app(test_config=None):
   app = Flask(__name__, instance_relative_config=True)
   app.config.from_mapping(
     SECRET_KEY='256133', #TODO 本番はランダムな値に変更
-    DATABASE=os.path.join(app.instance_path, 'app.mysql'), #TODO データベース設定
+    DATABASE=os.path.join(app.instance_path, 'app.sqlite'), #TODO データベース設定
   )
   
   if test_config is None:
@@ -26,5 +26,8 @@ def create_app(test_config=None):
   @app.route('/hello')
   def hello():
     return 'Hello, World!'
-  
+
+  from . import db
+  db.init_app(app)
+
   return app
