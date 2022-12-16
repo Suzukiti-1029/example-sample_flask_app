@@ -20,9 +20,9 @@ def register():
     error = None
 
     if not username:
-      error = 'Username is required.'
+      error = 'Usernameを入力してください。'
     elif not password:
-      error = 'Password is required.'
+      error = 'Passwordを入力してください。'
     
     if error is None:
       try:
@@ -32,7 +32,7 @@ def register():
         )
         db.commit()
       except db.IntegrityError:
-        error = f"User {username} is already registered."
+        error = f"{username}のユーザは既に登録されています。"
       else:
         return redirect(url_for("auth.login"))
     flash(error)
