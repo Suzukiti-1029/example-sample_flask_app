@@ -18,3 +18,24 @@ def index():
     order by created desc'''
   ).fetchall()
   return render_template('blog/index.html', posts=posts)
+
+@bp.route('/create', methods=('GET', 'POST'))
+def create():
+  if request.method == 'POST':
+    title = request.form['title']
+    body = request.form['body']
+    error = None
+    if not title:
+      error = 'Titleを入力してください'
+    if error is not None:
+      flash(error)
+    else:
+      db = get_db()
+      db.execute('''
+        insert into post(title, body, author_id)
+        values (?, ?, ?)''',
+        (title, body, g.user['id'])
+      )
+      db.commit()
+      return redirect(url_for('blog.index'))
+  return render_template('blog/create.html')
