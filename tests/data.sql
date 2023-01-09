@@ -1,6 +1,8 @@
 insert into user(username, password) values
-('test', 'pbkdf2:sha256:260000$Ys0Qwx0b6vEkSec5$e2554686d76996eea3e154dc92de91c0d9ac664bb804a9ba08f8f9b85baea9c3'),
-('other', 'pbkdf2:sha256:260000$w0qJVWQJoiUrv9aQ$2cc5a67bfe51705ad72993c5138f81c2cbfcaf66de3e6dd8aa307b7b745d43ea');
+('test', 'pbkdf2:sha256:260000$fmtF8gjhgC5f16jn$1b379117049e38b8657f6a943dc64479ed1cba394b05c1238945a3ec5c6531e2'),
+-- ID: test, pass: test
+('other', 'pbkdf2:sha256:260000$i1LO7xmWA7Ht4Hc3$399fbfae46f9d379e220c2730ece223b61675592ad25110dae24f9bd1359282d');
+-- ID: other, pass: other
 
 insert into post(title, body, author_id, created) values
 ('test title', 'test' || x'0a' || 'body',1, '2018-01-01 00:00:00');
